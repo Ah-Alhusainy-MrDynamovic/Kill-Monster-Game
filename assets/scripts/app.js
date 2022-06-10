@@ -175,7 +175,25 @@ function healPlayerHandler() {
 }
 
 function printLogHandler() {
-  console.log(battleLog);
+  // console.log(battleLog);
+	// battleLog.forEach(log => {
+	// 	console.log(log)
+	// });
+	// for (let index = 0; index < battleLog.length; index++) {
+	// 	const event = battleLog[index];
+	// 	console.log(event);
+	// }
+	for (const event of battleLog) {
+		console.log(event);
+		let i=0;
+		for (const key in event) {
+			if (Object.hasOwnProperty.call(event, key)) {
+				console.log(i);
+				console.log(key,':', event[key]);
+				i++
+			}
+		}
+	}
 }
 
 attackBtn.addEventListener('click', attackHandler);
